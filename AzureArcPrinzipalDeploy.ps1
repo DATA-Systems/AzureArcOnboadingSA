@@ -52,7 +52,10 @@ $enableSaScript = Join-Path -Path $LocalPath -ChildPath 'AzureArcEnableSA.ps1'
 if (Test-Path -Path $enableSaScript) {
     $configFilePath = "\\$Domain\$path\AzureArcConfig.json"
     $content = Get-Content -Path $enableSaScript
-    if ($content.Count -ge 6) {
+        if ($content[5] -match ($configFilePath -replace '\\', '\\')) { # first string of "\\"" needs escaping because if regex, secound is just the string put there so it seems like it the same. 
+        Write-Host "AzureArcConfig.json path is already correct in AzureArcEnableSA.ps1."
+    }
+    else {
         $content[5] = $content[5] -replace 'AzureArcConfig\.json', $configFilePath
         $content | Set-Content -Path $enableSaScript
     }
