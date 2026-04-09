@@ -45,5 +45,9 @@ Lastly it executed the deployment script from microsoft which will create an GPO
     - Add Aguments: -ExecutionPolicy Bypass -Command "& \\DOMAIN.COM\NETLOGON\AzureArc\AzureArcEnableSA.ps1"
 - GPO > Computer Configuration > Policies > Software Settings > Assigned Applications > add the `Azure Connected Maschine Agent` MSI
 
+## Refernece
+https://learn.microsoft.com/en-us/azure/azure-arc/servers/onboard-group-policy-powershell<br>
+https://learn.microsoft.com/en-us/azure/azure-arc/servers/windows-server-management-overview?tabs=powershell#enrollment
+
 ## License
 Shall be used under [GPLv3](https://github.com/DATA-Systems/AzureArcOnboadingSA/blob/main/LICENSE).
