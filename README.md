@@ -11,7 +11,7 @@ GPO Deploy Script Bundle: https://github.com/Azure/ArcEnabledServersGroupPolicy/
 
 ### 2. Sysvol
 1. Create an folder for AzureArc eg. `C:\Windows\SYSVOL\sysvol\domain.com\scripts\AzureArc` (`\\domain.com\NETLOGON\AzureArc`)
-2. Put the `Enable Software Asurance` Script, the `Azure Connected Maschine Agent` msi and the content of the `GPO Deploy Script Bundle` zip (`ArcFPO`, `AuireArcDeployment.psm1`, `DeplayGPO.ps1`, `EnableAzureArc.ps1`) in the created folder.
+2. Put the `Enable Software Asurance` Script, the `Azure Connected Maschine Agent` msi and the content of the `GPO Deploy Script Bundle` zip (`ArcGPO`, `AuireArcDeployment.psm1`, `DeplayGPO.ps1`, `EnableAzureArc.ps1`) in the created folder.
 
 ### 3. Config
 Adjust the config in the `Prinzipal and Deploy` script.
@@ -43,7 +43,7 @@ Lastly it executed the deployment script from microsoft which will create an GPO
 - GPO > Computer Configuration > Preferences > Control Panel Settings > Schedules Tasks > Immediate Task (At least Windows 7): Arc Agent Installation > Actions > New:
     - Program/script: `Powershell.exe`
     - Add Aguments: -ExecutionPolicy Bypass -Command "& \\DOMAIN.COM\NETLOGON\AzureArc\AzureArcEnableSA.ps1"
-- GPO > Computer Configuration > Policies > Software Settings > Assigned Applications > add the `Azure Connected Maschine Agent` MSI
+- GPO > Computer Configuration > Policies > Software Settings > Assigned Applications > add the `Azure Connected Maschine Agent` msi
 
 ## Refernece
 https://learn.microsoft.com/en-us/azure/azure-arc/servers/onboard-group-policy-powershell<br>
