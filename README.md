@@ -4,10 +4,10 @@
 
 ### 1. Download
 
-Prinzipal and Deploy: https://cooming.soon/
-Enable Software Asurance: https://cooming.soon/
-Azure Connected Maschine Agent: https://gbl.his.arc.azure.com/azcmagent/latest/AzureConnectedMachineAgent.msi
-GPO Deploy Script Bundle: https://github.com/Azure/ArcEnabledServersGroupPolicy/releases/latest
+Prinzipal and Deploy: `https://cooming.soon/`<br>
+Enable Software Asurance: `https://cooming.soon/`<br>
+Azure Connected Maschine Agent: `https://gbl.his.arc.azure.com/azcmagent/latest/AzureConnectedMachineAgent.msiv`<br>
+GPO Deploy Script Bundle: `https://github.com/Azure/ArcEnabledServersGroupPolicy/releases/latest`<br>
 
 ### 2. Sysvol
 1. Create an folder for AzureArc eg. `C:\Windows\SYSVOL\sysvol\XXXX\scripts\AzureArc` (`\\domain.com\NETLOGON\AzureArc`)
