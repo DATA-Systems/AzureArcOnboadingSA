@@ -10,7 +10,7 @@ Azure Connected Maschine Agent: https://gbl.his.arc.azure.com/azcmagent/latest/A
 GPO Deploy Script Bundle: https://github.com/Azure/ArcEnabledServersGroupPolicy/releases/latest<br>
 
 ### 2. Sysvol
-1. Create an folder for AzureArc eg. `C:\Windows\SYSVOL\sysvol\XXXX\scripts\AzureArc` (`\\domain.com\NETLOGON\AzureArc`)
+1. Create an folder for AzureArc eg. `C:\Windows\SYSVOL\sysvol\domain.com\scripts\AzureArc` (`\\domain.com\NETLOGON\AzureArc`)
 2. Put the `Enable Software Asurance` Script, the `Azure Connected Maschine Agent` msi and the content of the `GPO Deploy Script Bundle` zip (`ArcFPO`, `AuireArcDeployment.psm1`, `DeplayGPO.ps1`, `EnableAzureArc.ps1`) in the created folder.
 
 ### 3. Config
