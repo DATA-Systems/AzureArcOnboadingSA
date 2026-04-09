@@ -29,10 +29,6 @@ if ($subscriptionId -eq '') {
     Set-AzContext -Subscription $subscriptionId | Out-Null
 }
 
-Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force | Out-Null
-Set-PSRepository -name PSGallery -InstallationPolicy Trusted
-Install-Module Az.Resources -AllowClobber -Confirm:$false
-
 $sp = New-AzADServicePrincipal -DisplayName $ClientName -Role "Azure Connected Machine Onboarding"
 New-AzRoleAssignment -ObjectId $sp.Id -RoleDefinitionName "Azure Connected Machine Resource Administrator" -Scope "/subscriptions/$subscriptionId/" | Out-Null
 $app = Get-AzADApplication -DisplayName $ClientName
