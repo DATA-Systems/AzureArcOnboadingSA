@@ -6,7 +6,7 @@
 
 Prinzipal and Deploy: https://github.com/DATA-Systems/AzureArcOnboadingSA/blob/main/AzureArcPrinzipalDeploy.ps1<br>
 Enable Software Asurance: https://github.com/DATA-Systems/AzureArcOnboadingSA/blob/main/AzureArcEnableSA.ps1<br>
-Azure Connected Maschine Agent: https://gbl.his.arc.azure.com/azcmagent/latest/AzureConnectedMachineAgent.msiv<br>
+Azure Connected Maschine Agent: https://gbl.his.arc.azure.com/azcmagent/latest/AzureConnectedMachineAgent.msi<br>
 GPO Deploy Script Bundle: https://github.com/Azure/ArcEnabledServersGroupPolicy/releases/latest<br>
 
 ### 2. Sysvol
