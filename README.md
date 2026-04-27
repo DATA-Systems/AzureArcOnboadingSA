@@ -55,7 +55,7 @@ Lastly it executed the deployment script from microsoft which will create an GPO
 
 ## Trouble Shooting
 
-### 
+### argument transformation
 Error: `The argument transformation for the parameter "ObjectId" cannot be processed. The value cannot be converted to the type "System.String".`
 Fix: Check for multiple Entra Applications with the samen name.
 At the moment the script cannot auto delete applications after unsucesful completion, neither decide between multiple applications.
