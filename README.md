@@ -53,6 +53,13 @@ Lastly it executed the deployment script from microsoft which will create an GPO
     - Add Aguments: -ExecutionPolicy Bypass -Command "& \\DOMAIN.COM\NETLOGON\AzureArc\AzureArcEnableSA.ps1"
 - GPO > Computer Configuration > Policies > Software Settings > Assigned Applications > add the `Azure Connected Maschine Agent` msi
 
+## Trouble Shooting
+
+### 
+Error: `The argument transformation for the parameter "ObjectId" cannot be processed. The value cannot be converted to the type "System.String".`
+Fix: Check for multiple Entra Applications with the samen name.
+At the moment the script cannot auto delete applications after unsucesful completion, neither decide between multiple applications.
+
 ## Refernece
 https://learn.microsoft.com/en-us/azure/azure-arc/servers/onboard-group-policy-powershell<br>
 https://learn.microsoft.com/en-us/azure/azure-arc/servers/windows-server-management-overview?tabs=powershell#enrollment
