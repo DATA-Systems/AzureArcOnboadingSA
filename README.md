@@ -19,13 +19,21 @@ Adjust the config in the `Prinzipal and Deploy` script.
 ##########
 # Config #
 ##########
-$subscriptionId = 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX'
-$ClientName = 'Azure Arc'
-$resourceGroupName = 'XXXXX'
-$Location = 'XXXXX'
+$subscriptionId = 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'    # Azure Subscription ID, where the Service Principal will be created and Arc Servers will be onboarded.
+                                                            # Check: https://portal.azure.com/#view/Microsoft_Azure_Billing/SubscriptionsBladeV2
+$ClientName = 'Azure Arc SPN'                               # DisplayName of the new Azure AD Service Principal.
+                                                            # You can choose any name, but it makes sense to choose a meaningful one, especially if you plan to use the same subscription for other purposes as well.
+$resourceGroupName = 'EXAMPLE_ARC_Servers'                  # Resource Group where Arc Servers will be onboarded. Your Azure Resource Group needs to exist before running the script.
+                                                            # Check: https://portal.azure.com/#servicemenu/Microsoft_Azure_Resources/ResourceManager/resourcegroups
+$Location = 'germanywestcentral'                            # Azure Region, where Arc Servers will be onboarded.
+                                                            # Check: https://learn.microsoft.com/en-us/azure/reliability/regions-list?tabs=all
+                                                            # Pick "Programmatic name" from the table.
 $ClientSecretLifetimeMonths = 120
-$Domain = "domain.com"
-$path = "NETLOGON\AzureArc"
+$Domain = "EXAMPLE.LOCAL"                                   # Your local Active Directory Domain (FQDN)
+$path = "NETLOGON\AzureArc"                                 # Path in your SYSVOL, where this script is stored. The script will be deployed via GPO, so it needs to be in the SYSVOL (or other deployment share).
+                                                            # You can choose any path, but it makes sense to choose a meaningful one and to keep it short because of potential path length issues.
+                                                            # Also, this need to be readable by SYSTEM account of the servers, so it needs to be in a share that is accessible by the servers during startup.
+                                                            # The NETLOGON share is a good choice, because it is replicated to all Domain Controllers and accessible by all machines in the domain.
 $LocalPath = "C:\Windows\SYSVOL\sysvol\${Domain}\scripts\AzureArc"
 ##########
 ```
