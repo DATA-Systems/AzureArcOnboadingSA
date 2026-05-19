@@ -54,7 +54,6 @@ Lastly it executed the deployment script from microsoft which will create an GPO
 - GPO > Computer Configuration > Preferences > Control Panel Settings > Schedules Tasks > Immediate Task (At least Windows 7): Arc Agent Installation > Actions > New:
     - Program/script: `Powershell.exe`
     - Add Aguments: -ExecutionPolicy Bypass -Command "& \\DOMAIN.COM\NETLOGON\AzureArc\AzureArcEnableSA.ps1"
-⚠️ Together > Destinationadressing: remove Windows Server 2016 and below
 - GPO > Computer Configuration > Policies > Software Settings > Assigned Applications > add the `Azure Connected Maschine Agent` msi
 ## Trouble Shooting
 
