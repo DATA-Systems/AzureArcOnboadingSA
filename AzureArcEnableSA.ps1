@@ -25,7 +25,7 @@ $location = $jsonData.Location
 # Install Az.ConnectedMachine module, connect to Azure, enable SA
 Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force | Out-Null
 Set-PSRepository -name PSGallery -InstallationPolicy Trusted | Out-Null
-Install-Module Az.ConnectedMachine -AllowClobber -Confirm:$false | Out-Null
+Install-Module Az -AllowClobber -Confirm:$false | Out-Null
 
 $pass = ConvertTo-SecureString $servicePrincipalClientSecret -AsPlainText -Force
 $clientSecret = New-Object System.Management.Automation.PSCredential ($servicePrincipalID, $pass)
