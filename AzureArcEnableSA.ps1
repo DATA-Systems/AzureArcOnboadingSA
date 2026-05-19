@@ -5,7 +5,7 @@ if ((Get-ItemProperty -Path "HKLM:\SYSTEM\Software\Microsoft\AzureConnectedMachi
 
 # print error in case some starts it manually
 $osVersion = [System.Environment]::OSVersion.Version
-if ($osVersion.Major -le 6 -or ($osVersion.Major -eq 10 -and $osVersion.Minor -eq 0 -and [int](Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion" -Name ReleaseId).ReleaseId -lt 1607)) {
+if ($osVersion.Major -le 10 -or ($osVersion.Major -eq 10 -and $osVersion.Minor -eq 0 -and [int](Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion" -Name ReleaseId).ReleaseId -le 1607)) {
     Write-Error "Windows Server 2016 or below is not supported. Current version: $($osVersion.Major).$($osVersion.Minor)"
     exit 1
 }
