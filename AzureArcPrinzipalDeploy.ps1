@@ -69,6 +69,14 @@ if (Test-Path -Path $enableSaScript) {
     }
 }
 
+Write-Error "!!!!!!!!!!!!!!!!!!!!!"
+Write-Error "on Windows Server 2016 or below the Enable Software Assurance script will **FAIL**"
+Write-Error "!!!!!!!!!!!!!!!!!!!!!"
+
+Start-Sleep -Seconds 10
+
+Write-Host "Starting Microosoft Azure Arc onboarding script deployment via GPO"
+
 .\DeployGPO.ps1 -DomainFQDN $Domain -ReportServerFQDN $Domain -ArcRemoteShare $path -ServicePrincipalSecret $credential.SecretText -ServicePrincipalClientId $sp.AppId -SubscriptionId $subscriptionId -ResourceGroup $resourceGroupName -Location $Location -TenantId $sp.AppOwnerOrganizationId
 
 Set-Location -Path $dir
