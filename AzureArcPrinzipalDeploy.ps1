@@ -52,7 +52,7 @@ $jsonData = @{
     SecretText = $credential.SecretText
     AppId = $sp.AppId
     TenantId = $sp.AppOwnerOrganizationId
-    Location = 'germanywestcentral'
+    Location = $Location
 }
 $jsonData | ConvertTo-Json | Out-File -FilePath "AzureArcConfig.json"
 
