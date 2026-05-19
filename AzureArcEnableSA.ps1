@@ -24,6 +24,9 @@ $location = $jsonData.Location
 
 # Install Az.ConnectedMachine module, connect to Azure, enable SA
 Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force | Out-Null
+if (-not (Get-PSRepository -Name PSGallery -ErrorAction SilentlyContinue)) {
+    Register-PSRepository -Default
+}
 Set-PSRepository -name PSGallery -InstallationPolicy Trusted | Out-Null
 Install-Module Az -AllowClobber -Confirm:$false | Out-Null
 
