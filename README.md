@@ -1,5 +1,8 @@
 # Azure Arc Onboarding
 
+### Windows Server 2016 and below
+⚠️ **Warning**: The Enable SA script will fail on Windows Server 2016 and below. Servers without Software Assurance enabled will still be onboarded, but Microsoft will charge €5 per machine. Ensure Software Assurance is enabled manually for Windows Server 2016 and earlier versions to avoid additional costs.
+
 ## Setup
 
 ### 1. Download
