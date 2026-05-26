@@ -69,9 +69,9 @@ if (Test-Path -Path $enableSaScript) {
     }
 }
 
-Write-Error "!!!!!!!!!!!!!!!!!!!!!"
-Write-Error "on Windows Server 2016 or below the Enable Software Assurance script will **FAIL**"
-Write-Error "!!!!!!!!!!!!!!!!!!!!!"
+Write-Warning "!!!!!!!!!!!!!!!!!!!!!"
+Write-Warning "on Windows Server 2016 or below the Enable Software Assurance script will **FAIL**"
+Write-Warning "!!!!!!!!!!!!!!!!!!!!!"
 
 Start-Sleep -Seconds 10
 
