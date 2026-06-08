@@ -54,7 +54,13 @@ Lastly it executed the deployment script from microsoft which will create an GPO
 - GPO > Computer Configuration > Preferences > Control Panel Settings > Schedules Tasks > Immediate Task (At least Windows 7): Arc Agent Installation > Actions > New:
     - Program/script: `Powershell.exe`
     - Add Aguments: -ExecutionPolicy Bypass -Command "& \\DOMAIN.COM\NETLOGON\AzureArc\AzureArcEnableSA.ps1"
+
 ## Trouble Shooting
+
+### The operator or administrator has refused the request.
+The global PATH environment variable is either corrupted or missing the standard PowerShell directory.
+fix: `setx /M PATH "%PATH%;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\"`
+or: use `%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\powershell.exe` in the tasks.
 
 ### argument transformation
 Error: `The argument transformation for the parameter "ObjectId" cannot be processed. The value cannot be converted to the type "System.String".`
