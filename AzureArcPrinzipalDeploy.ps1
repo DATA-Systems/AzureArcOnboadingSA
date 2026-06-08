@@ -72,18 +72,18 @@ $enableSaScript = Join-Path -Path $LocalPath -ChildPath 'AzureArcEnableSA.ps1'
 if (Test-Path -Path $enableSaScript) {
     $configFilePath = "\\$Domain\$path\AzureArcConfig.json"
     $content = Get-Content -Path $enableSaScript
-        if ($content[5] -match ($configFilePath -replace '\\', '\\')) { # first string of "\\"" needs escaping because if regex, secound is just the string put there so it seems like it the same. 
+        if ($content[12] -match ($configFilePath -replace '\\', '\\')) { # first string of "\\"" needs escaping because if regex, secound is just the string put there so it seems like it the same. 
         Write-Host "AzureArcConfig.json path is already correct in AzureArcEnableSA.ps1."
     }
     else {
-        $content[5] = $content[5] -replace 'AzureArcConfig\.json', $configFilePath
+        $content[12] = $content[12] -replace 'AzureArcConfig\.json', $configFilePath
         $content | Set-Content -Path $enableSaScript
     }
 }
 
-Write-Error "!!!!!!!!!!!!!!!!!!!!!"
-Write-Error "on Windows Server 2016 or below the Enable Software Assurance script will **FAIL**"
-Write-Error "!!!!!!!!!!!!!!!!!!!!!"
+Write-Warning "!!!!!!!!!!!!!!!!!!!!!"
+Write-Warning "on Windows Server 2016 or below the Enable Software Assurance script will **FAIL**"
+Write-Warning "!!!!!!!!!!!!!!!!!!!!!"
 
 Start-Sleep -Seconds 10
 
