@@ -53,7 +53,7 @@ Lastly it executed the deployment script from microsoft which will create an GPO
 - Rename the GPO eg. `COMPUTER_AzureArc_AzureConnectedMaschineAgent+EnableSA`
 - GPO > Computer Configuration > Preferences > Control Panel Settings > Schedules Tasks > Immediate Task (At least Windows 7): Arc Agent Installation > Actions > New:
     - Program/script: `Powershell.exe`
-    - Add Aguments: -ExecutionPolicy Bypass -Command "& \\DOMAIN.COM\NETLOGON\AzureArc\AzureArcEnableSA.ps1"
+    - Add Aguments: -ExecutionPolicy Bypass -Command "& \\\\DOMAIN.COM\NETLOGON\AzureArc\AzureArcEnableSA.ps1"
 
 ## Trouble Shooting
 
