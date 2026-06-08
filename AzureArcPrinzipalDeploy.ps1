@@ -20,6 +20,18 @@ $LocalPath = "C:\Windows\SYSVOL\sysvol\${Domain}\scripts\AzureArc"
 ##########
 $dir = Get-Location
 
+# if localpath left default and does not exists try the DFSR path
+if (!(Test-Path $LocalPath)) {
+    if ($LocalPath -eq "C:\Windows\SYSVOL\sysvol\${Domain}\scripts\AzureArc") {
+        $alt = "C:\Windows\SYSVOL_DFSR\sysvol\${Domain}\scripts\AzureArc"
+        if (!(Test-Path $alt)) {
+            Write-Host "$LocalPath does not exist. Please create the folder and put the script there or update the LocalPath variable in the config section of the script."
+        } else {
+            $LocalPath = $alt
+        }
+    }
+}
+
 # Install Az module, connect to Azure, enable SA
 Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force | Out-Null
 Set-PSRepository -name PSGallery -InstallationPolicy Trusted | Out-Null
