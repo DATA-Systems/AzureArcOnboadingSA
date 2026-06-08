@@ -71,5 +71,8 @@ At the moment the script cannot auto delete applications after unsucesful comple
 https://learn.microsoft.com/en-us/azure/azure-arc/servers/onboard-group-policy-powershell<br>
 https://learn.microsoft.com/en-us/azure/azure-arc/servers/windows-server-management-overview?tabs=powershell#enrollment
 
+## Managing with Tags
+[Microsofts tag policies](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-policies)
+
 ## License
 Shall be used under [GPLv3](https://github.com/DATA-Systems/AzureArcOnboadingSA/blob/main/LICENSE).
